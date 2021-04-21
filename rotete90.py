@@ -10,7 +10,7 @@
 
 def rotate_90(arr):
     # 1. 변수 (테이블의 길이 즉, 열 의 끝자리 값)
-    N = len(arr)
+    N = len(arr) # N = 3
     # 1.1 
     rotate_arr = [[0] * N for a in range(N)] # for A in range(n) : n의 횟수 만큼 A를 반복  
 
@@ -37,7 +37,6 @@ arr = [
     [0, 0, 0]]
 
 arr = rotate_90(arr)
-
 
 for z in arr:
     print(z)

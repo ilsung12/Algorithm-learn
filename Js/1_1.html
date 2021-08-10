@@ -6,10 +6,17 @@
   </head>
   <body>
     <script>
-      let data = [1, 2, 3];
+      let data = [
+        "  + -- + - + -  ",
+        "  + --- + - +  ",
+        "  + -- + - + -  ",
+        "  + - + - + - +  ",
+      ];
 
       for (var s of data) {
-        console.log(s);
+        // 정규 표현식
+        console.log(s.replace(/ /g, "").replace(/\+/g, '1').replace(/\-/g, '0')); 
+        
       }
     </script>
   </body>

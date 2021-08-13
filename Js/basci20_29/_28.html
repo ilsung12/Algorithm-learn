@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        2-gram이란 문자열에서 2개의 연속된 요소를 
+        출력하는 방법입니다. 
+
+        예를 들어 'Javascript'를 2-gram으로 반복해
+        본다면 다음과 같은 결과가 나옵니다.
+
+
+        입력
+        Javascript
+
+        출력
+        J a
+        a v
+        v a
+        a s
+        s c
+        c r
+        r i
+        i p
+        p t
+    </pre>
+    <script>
+        let text = prompt('Javascript').split('')
+
+        for (let i=0;i<text.length-1; i++){
+                console.log(text[i], text[i+1] )
+            }
+
+
+        console.log(text)
+    </script>
+
+    
+</body>
+</html>

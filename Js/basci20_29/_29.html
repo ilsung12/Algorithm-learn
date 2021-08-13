@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+        진구는 영어 학원 아르바이트를 하고 있습니다. 
+        반 아이들은 알파벳을 공부하는 학생들인데 
+        오늘은 대문자 쓰기 시험을 봤습니다.
+
+        알파벳 하나만을 입력하고 
+        그 알파벳이 대문자이면 YES를 
+        아니면 NO를 출력하는 프로그램을 만들어 주세요.
+
+    </pre>
+    <script>
+      let alphabet = prompt("a");
+      let alphabetLower = alphabet.toLowerCase();
+      // toLowerCase를 사용한 이유 : 
+      // 기호 등을 No로 하고 "대문자만" Yes이려면 toLowerCase로 사용이 가능했다.
+
+      if (alphabet == alphabetLower) {
+        console.log("No");
+      } else {
+        console.log("Yes");
+      }1
+    </script>
+  </body>
+</html>

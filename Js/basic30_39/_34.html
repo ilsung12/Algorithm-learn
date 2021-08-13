@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+        민주는 체육부장으로 체육시간이 되면 
+        반 친구들이 제대로 키 순서대로 모였는지를 확인해야 한다. 
+        그런데 요즘 민주는 그것이 너무 번거롭게 느껴져 
+        한 번에 확인하고 싶어한다. 
+
+        민주를 위해 키가 주어지면 순서대로 
+        제대로 섰는지 확인하는 프로그램을 작성해보자.
+        (키는 공백으로 구분하여 입력됩니다.)
+        
+        
+        **입출력**
+        
+        입력 : 176 156 155 165 166 169
+        출력 : NO
+        
+        입력 : 155 156 165 166 169 176
+        출력 : YES
+        
+    </pre>
+    <!-- <script>
+      let cm = "176 177 178 179".split(" ");
+      let a = [];
+      let b = "";
+      let result = "";
+
+      for (let i = 0; i < cm.length - 1; i++) {
+        //console.log('cm+1', cm[i+1])
+        a.push(cm[i]);
+        //console.log('a>>', a[i])
+        if (a[i] <= cm[i + 1]) {
+          console.log("Yes");
+        } else {
+          console.log("No");
+        }
+      }
+    </script> -->
+    <script>
+  
+
+    let data = '155 166 163 168' // 입력값
+    let n = '' // 비교대상
+
+    // .sort를 통해 값을 정렬시킴
+    n = data.split(' ').sort((a, b)=>{
+        return  a - b
+    }).join(" ")
+
+    // 입력값 vs 비교대상 
+    if(n === data){
+        // 같으면
+        console.log('yes')
+    } else {
+        // 같지않으면
+        console.log('no')
+    }
+    // console.log(n)
+    // console.log(data)
+
+    </script>
+  </body>
+</html>

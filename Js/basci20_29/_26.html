@@ -29,6 +29,10 @@
       const name = prompt("행성이름 입력하세요");
 
       console.log(planets[name]);
+      // console.log(planets.name);
+      // -> undefind : 마침표 연산자는 접근 불가
+      // 연산자 우측에 반드시 프로퍼티의 이름이 식별자로 들어가야함
+      // e.g : console.log(planets.토성);  이렇게 해야함.
     </script>
   </body>
 </html>

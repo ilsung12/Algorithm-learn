@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+        문자열이 주어지면 대문자와 소문자를 바꿔서 출력하는 프로그램을 작성하세요.
+
+        입출력
+        입력 : AAABBBcccddd
+        출력 : aaabbbCCCDDD        
+    </pre>
+    <script>
+      let text = "AAABBBcccddd".split("");
+      let arr = [];
+
+      for (let i in text) {
+        // console.log(text[i])
+        if (text[i] === text[i].toUpperCase()) {
+          //console.log(text[i].toLowerCase());
+          arr.push(text[i].toLowerCase());
+        } else {
+          //console.log(text[i].toUpperCase());
+          arr.push(text[i].toUpperCase());
+        }
+      }
+      console.log(arr.join(""));
+
+      // 답안 :
+      // let a = prompt('문자열을 입력하세요.');
+      // let b = [];
+      // let s = '';
+
+      // for (let i=0; i<a.length; i++){
+      // //toLowerCase() 메서드는 문자열을 소문자로,
+      // //toUpperCase() 메서드는 문자열을 대문자로 변환하여 반환합니다.
+      // if(a[i] === a[i].toLowerCase()){
+      //     b.push(a[i].toUpperCase());
+      // } else {
+      //     b.push(a[i].toLowerCase());
+      // }
+      // }
+
+      // for (let j=0; j<b.length; j++){
+      // s += b[j];
+      // }
+
+      // console.log(s);
+    </script>
+  </body>
+</html>

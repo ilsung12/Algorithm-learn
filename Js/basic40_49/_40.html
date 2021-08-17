@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+        테마파크에 온 원범이와 친구들은 놀이기구를 타려고 합니다. 
+        모든 놀이기구는 한번에 타는 인원수에는 제한이 없지만 
+        제한 무게를 넘으면 무조건 다음 기구를 타야 합니다. 
+
+        원범이와 친구들이 총 몇 명 탈 수 있는지 
+        알 수 있는 프로그램을 작성해 주세요.
+        
+        첫번째 입력으로 제한 무게가 주어지고 
+        두번째 입력으로는 함께한 친구들의 수 n이 주어집니다. 
+        그 다음 차례대로 탑승할 친구들의 몸무게가 주어집니다. 
+        몸무게는 무작위로 주어집니다.
+        
+        
+        입력
+        50 -> 무게제한
+        5  -> 인원
+        20 -> 사람무게
+        20 -> 사람무게
+        20 -> 사람무게
+        20 -> 사람무게
+        20 -> 사람무게
+
+        = 사람무게 * 인원 / 무게 제한
+        
+        출력
+        2
+        
+    </pre>
+    <script>
+      // let limit = prompt("무게입력");
+      // let person = prompt("탑승인원");
+      //   let limit = "50";
+      //   let person = "5";
+      //   let personKG = prompt("개인무게").split(" ");
+
+      //   for (let i = 1; i <= personKG.length; i++) {
+      //     // console.log(per2sonKG);
+      //     console.log((person * personKG[i]) / limit);
+      //   }
+
+      // 답안 -----------------------------------------------------------------
+      // 1. 총중량
+      // 2. 몇명 탈지
+      // 3. 개개인의 무게
+
+      // 탑승할 친구들의 수만큼 회전해서 최초 정한 무게 만큼 더한다.
+
+      const weightLimit = prompt("무게제한");
+      const memverCount = prompt("탑승인원");
+      let count = 0; // 탈수있는 인원 *출력값
+      let totalWeight = 0;
+
+      for (let i = 0; i < memverCount; i++) {
+        totalWeight =
+          totalWeight + parseInt(prompt("몸무게를 입력해주세요"), 10);
+        if (totalWeight <= weightLimit) {
+          count++;
+        }
+      }
+
+      console.log(count);
+    </script>
+  </body>
+</html>

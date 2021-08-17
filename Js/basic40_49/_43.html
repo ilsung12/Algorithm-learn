@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+        우리가 흔히 사용하는 숫자 1, 8, 19, 28893 등등...은 10진수 체계입니다.
+        이를 컴퓨터가 알아 들을 수 있는 2진수로 바꾸려고 합니다. 어떻게 해야할까요?
+        
+        **사용자에게 숫자를 입력받고 이를 2진수를 바꾸고 그 값을 출력해주세요.**
+    </pre>
+    <script>
+        let n = parseInt(prompt("2진수로 변환할 숫자를 입력하시오"), 10);
+
+        console.log(`메소드 편 : ${n.toString(2)}`);
+
+      // 답안 :
+      let dec = n;
+      let arrBinary = [];
+
+      while (dec) {
+        arrBinary.push(dec % 2);
+        dec = Math.floor(dec / 2); // 정수만
+      }
+
+      console.log('배열 편 : ',arrBinary.reverse().join(''));
+    </script>
+  </body>
+</html>

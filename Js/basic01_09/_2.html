@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <pre>
+        데이터
+        var arr = [200, 100, 300];
+        //pass
+        
+        console.log(arr);
+
+        출력
+        [200, 100, 10000, 300]
+    </pre>
     <script>
-        // 데이터
-        // var arr = [200, 100, 300];
-        // //pass
-        // console.log(arr);
+      var arr = [200, 100, 300];
 
-        // 출력
-        // [200, 100, 10000, 300]
+      arr.splice(2, 0, 10000);
 
-        var arr = [200, 100, 300]
-
-        arr.splice(2, 0 , 10000)
-
-        console.log(arr)
-
-
-
+      console.log(arr);
     </script>
-
-
-</body>
+  </body>
 </html>

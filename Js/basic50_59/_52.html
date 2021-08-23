@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>퀵정렬</title>
   </head>
   <body>
     <pre>
@@ -12,7 +12,7 @@
         <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/concat">참고</a>
     </pre>
     <script>
-      function quickSort(arr) {
+      function quickSort(arr) { // 퀵정렬은 병합정렬기반임 그러므로 1보다 작으면 정렬필요 x
         if (arr.length <= 1) {
           return arr;
         }

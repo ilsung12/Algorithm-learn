@@ -55,16 +55,16 @@
 
       // 탑승할 친구들의 수만큼 회전해서 최초 정한 무게 만큼 더한다.
 
-      const weightLimit = prompt("무게제한");
-      const memverCount = prompt("탑승인원");
+      const weightLimit = prompt("무게제한"); // 무게제한
+      const memverCount = prompt("탑승인원"); // 인원체크
       let count = 0; // 탈수있는 인원 *출력값
       let totalWeight = 0;
 
       for (let i = 0; i < memverCount; i++) {
         totalWeight =
-          totalWeight + parseInt(prompt("몸무게를 입력해주세요"), 10);
-        if (totalWeight <= weightLimit) {
-          count++;
+          totalWeight + parseInt(prompt("몸무게를 입력해주세요"), 10); // 누적값
+        if (totalWeight <= weightLimit) { // 누적값과 무게제한을 비교하고 누적값이 더작으면 인원 count++
+          count++; // 몇명 탈수 있는지 표출
         }
       }
 

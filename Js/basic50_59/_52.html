@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+        다음 빈 칸을 채워 퀵 정렬을 완성해주세요.
+        <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/concat">참고</a>
+    </pre>
+    <script>
+      function quickSort(arr) {
+        if (arr.length <= 1) {
+          return arr;
+        }
+
+        const pivot = arr[0]; // 기준값
+        const left = [];
+        const right = [];
+
+        for (let i = 1; i < arr.length; i++) {
+          if (arr[i] < pivot) {
+            left.push(arr[i]);
+            console.log("left", left);
+          } else {
+            right.push(arr[i]);
+            console.log("right", right);
+          }
+        }
+        return quickSort(left).concat(pivot, quickSort(right)); // 합체 중요한 로직임 !
+        // 계속 리턴하면서 pivot으로 비교하면서 나뉘었다가 합쳐짐
+      }
+
+      const array = "5 4 8 6 2 1 7".split(" ").map((n) => parseInt(n, 10));
+      // const array = prompt('배열을 입력하세요').split(' ').map(n => parseInt(n, 10));
+      //console.log(array)
+      console.log(quickSort(array));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체의 함수 응용</title>
+  </head>
+  <body>
+    <pre>
+        다음의 객체가 주어졌을 때 한국의 면적과 가장 비슷한 국가와 그 차이를 출력하세요.
+        데이터
+        nationWidth = {
+             'korea': 220877,
+             'Rusia': 17098242,
+             'China': 9596961,
+             'France': 543965,
+             'Japan': 377915,
+            'England' : 242900,
+        }
+
+        출력
+        England 22023
+    </pre>
+
+    <script>
+      const nationWidth = {
+        korea: 540877,
+        Rusia: 17098242,
+        China: 9596961,
+        France: 543965,
+        Japan: 377915,
+        England: 222242900,
+      };
+
+      const w = nationWidth["korea"];
+      delete nationWidth["korea"]; // 비교할 놈을 뺌
+      console.log(nationWidth);
+
+      const entry = Object.entries(nationWidth); // 객체를 어레이로
+      console.log('객체를 어레이로 entries', entry);
+      const values = Object.values(nationWidth); // 값만 출력
+      console.log('값만 출력 values', values)
+
+      // 비교할 값 저장 : 최대값 부터 나와라
+      let gap = Math.max.apply(null , values)
+      console.log(gap)
+      // 비교해서 가장 작은 격차를 가진 값을 저장
+      let item = []
+
+      for (let i in entry) {
+        console.log(`entry[${i}]`, entry[i])
+        console.log(`entry[${i}][1]`, Math.abs(entry[i][1]))
+        console.log(`entry[${i}][1]-w`, Math.abs(entry[i][1]-w))
+        if (gap > Math.abs(entry[i][1]-w)) { 
+          // gap은 무조건 더 크니까 gap으로 넣겠다는거임
+          gap = Math.abs(entry[i][1]-w) 
+          // gap에 계속 값을 넣음으로써 가장 작은 차이가 나는 놈의 값을 가짐
+          item = entry[i]
+        }
+      }
+      console.log('gap', gap)
+      console.log(item[0], item[1]-w, gap)
+
+
+
+    </script>
+  </body>
+</html>

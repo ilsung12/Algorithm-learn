@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문자열 압축하기</title>
+  </head>
+  <body>
+    <pre>
+        문자열을 입력받고 연속되는 문자열을 압축해서 표현하고 싶습니다.
+
+        **입력**
+        aaabbbbcdddd
+        
+        **출력**
+        a3b4c1d4
+
+        <!-- // 연속되는 것이 아니라 같은 값을 누적해서 표출해줌 -->
+    </pre>
+    <script>
+      let n = "aaabbbbcddccdd".split(""); 
+
+      const result = {};
+      n.forEach((e) => {
+        //result[e] = (result[e] || 0) + 1
+        if (result[e]) {
+          result[e] = result[e] + 1;
+        } else {
+          result[e] = 0 + 1;
+        }
+      });
+
+      let a = Object.entries(result)
+      let b = a.join('')
+      console.log(b.replaceAll(',', ''));
+    </script>
+  </body>
+</html>

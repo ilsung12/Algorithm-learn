@@ -19,7 +19,7 @@
         <!-- // 연속되는 것이 아니라 같은 값을 누적해서 표출해줌 -->
     </pre>
     <script>
-      let n = "aaabbbbcddccdd".split(""); 
+      let n = "aaabbbbcddccdd".split("");
 
       const result = {};
       n.forEach((e) => {
@@ -31,9 +31,9 @@
         }
       });
 
-      let a = Object.entries(result)
-      let b = a.join('')
-      console.log(b.replaceAll(',', ''));
+      let a = Object.entries(result);
+      let b = a.join("");
+      console.log(b.replaceAll(",", ""));
     </script>
   </body>
 </html>

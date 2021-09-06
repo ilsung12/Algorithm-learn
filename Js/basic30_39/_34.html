@@ -45,27 +45,27 @@
       }
     </script> -->
     <script>
-  
+      let data = "155 166 163 168"; // 입력값
+      let n = ""; // 비교대상
 
-    let data = '155 166 163 168' // 입력값
-    let n = '' // 비교대상
+      // .sort를 통해 값을 정렬시킴
+      n = data
+        .split(" ")
+        .sort((a, b) => {
+          return a - b;
+        })
+        .join(" ");
 
-    // .sort를 통해 값을 정렬시킴
-    n = data.split(' ').sort((a, b)=>{
-        return  a - b
-    }).join(" ")
-
-    // 입력값 vs 비교대상 
-    if(n === data){
+      // 입력값 vs 비교대상
+      if (n === data) {
         // 같으면
-        console.log('yes')
-    } else {
+        console.log("yes");
+      } else {
         // 같지않으면
-        console.log('no')
-    }
-    // console.log(n)
-    // console.log(data)
-
+        console.log("no");
+      }
+      // console.log(n)
+      // console.log(data)
     </script>
   </body>
 </html>

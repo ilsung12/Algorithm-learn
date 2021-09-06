@@ -16,22 +16,21 @@
         예를 들어, 123456789를 입력받았으면 123,456,789를 출력해야 합니다.
     </pre>
     <script>
-        // 내장함수 버전
-    //   const n = 123123123;
-    //   console.log(n.toLocaleString())
+      // 내장함수 버전
+      //   const n = 123123123;
+      //   console.log(n.toLocaleString())
 
-    // 함수 출이 버전
+      // 함수 출이 버전
 
-    function comma(s){
-        if(s.length <= 3) {
-            return s
+      function comma(s) {
+        if (s.length <= 3) {
+          return s;
         } else {
-            return comma(s.slice(0, s.length - 3))+ ',' + s.slice(s.length - 3)
+          return comma(s.slice(0, s.length - 3)) + "," + s.slice(s.length - 3);
         }
-    }
+      }
 
-    console.log(comma('1234556789'))
-
+      console.log(comma("1234556789"));
     </script>
   </body>
 </html>

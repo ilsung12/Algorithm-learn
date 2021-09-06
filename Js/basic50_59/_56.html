@@ -38,32 +38,29 @@
       console.log(nationWidth);
 
       const entry = Object.entries(nationWidth); // 객체를 어레이로
-      console.log('객체를 어레이로 entries', entry);
+      console.log("객체를 어레이로 entries", entry);
       const values = Object.values(nationWidth); // 값만 출력
-      console.log('값만 출력 values', values)
+      console.log("값만 출력 values", values);
 
       // 비교할 값 저장 : 최대값 부터 나와라
-      let gap = Math.max.apply(null , values)
-      console.log(gap)
+      let gap = Math.max.apply(null, values);
+      console.log(gap);
       // 비교해서 가장 작은 격차를 가진 값을 저장
-      let item = []
+      let item = [];
 
       for (let i in entry) {
-        console.log(`entry[${i}]`, entry[i])
-        console.log(`entry[${i}][1]`, Math.abs(entry[i][1]))
-        console.log(`entry[${i}][1]-w`, Math.abs(entry[i][1]-w))
-        if (gap > Math.abs(entry[i][1]-w)) { 
+        console.log(`entry[${i}]`, entry[i]);
+        console.log(`entry[${i}][1]`, Math.abs(entry[i][1]));
+        console.log(`entry[${i}][1]-w`, Math.abs(entry[i][1] - w));
+        if (gap > Math.abs(entry[i][1] - w)) {
           // gap은 무조건 더 크니까 gap으로 넣겠다는거임
-          gap = Math.abs(entry[i][1]-w) 
+          gap = Math.abs(entry[i][1] - w);
           // gap에 계속 값을 넣음으로써 가장 작은 차이가 나는 놈의 값을 가짐
-          item = entry[i]
+          item = entry[i];
         }
       }
-      console.log('gap', gap)
-      console.log(item[0], item[1]-w, gap)
-
-
-
+      console.log("gap", gap);
+      console.log(item[0], item[1] - w, gap);
     </script>
   </body>
 </html>

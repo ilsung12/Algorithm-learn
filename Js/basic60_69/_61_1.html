@@ -17,27 +17,24 @@
         a3b4c1d4
     </pre>
     <script>
-      const user_s = 'aaabbbbcddccdd'
-      let result_s = ''
-      let store_s = user_s[0]
-      let count = 0
+      const user_s = "aaabbbbcddccdd";
+      let result_s = "";
+      let store_s = user_s[0];
+      let count = 0;
 
-      for(let i of user_s){
-          console.log(i)
-          if ( i == store_s){
-            count+=1
-          } else {
-              result_s += store_s + String(count)
-              store_s = i
-              count = 1
-          }
-          
+      for (let i of user_s) {
+        console.log(i);
+        if (i == store_s) {
+          count += 1;
+        } else {
+          result_s += store_s + String(count);
+          store_s = i;
+          count = 1;
+        }
       }
-      result_s += store_s + String(count)
+      result_s += store_s + String(count);
 
-      console.log(result_s)
-
-
+      console.log(result_s);
     </script>
   </body>
 </html>

@@ -63,7 +63,8 @@
       for (let i = 0; i < memverCount; i++) {
         totalWeight =
           totalWeight + parseInt(prompt("몸무게를 입력해주세요"), 10); // 누적값
-        if (totalWeight <= weightLimit) { // 누적값과 무게제한을 비교하고 누적값이 더작으면 인원 count++
+        if (totalWeight <= weightLimit) {
+          // 누적값과 무게제한을 비교하고 누적값이 더작으면 인원 count++
           count++; // 몇명 탈수 있는지 표출
         }
       }

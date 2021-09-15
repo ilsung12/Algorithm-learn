@@ -23,23 +23,22 @@
         만약 어떻게 해도 정량이 N이 되지 않는다면 -1을 출력합니다.
     </pre>
     <script>
-     let n = 30
-     let count = 0
+      let n = 30;
+      let count = 0;
 
-     while(true){
-         if (n%7 == 0) {
-            count += parseInt(n/7,10)
-            console.log('count',count)
-            break
-         }
-         n -= 3
-         count += 1
-         if(n<0 ) {
-             console.log(-1)
-             break
-         }
-     }
-
+      while (true) {
+        if (n % 7 == 0) {
+          count += parseInt(n / 7, 10);
+          console.log("count", count);
+          break;
+        }
+        n -= 3;
+        count += 1;
+        if (n < 0) {
+          console.log(-1);
+          break;
+        }
+      }
     </script>
   </body>
 </html>

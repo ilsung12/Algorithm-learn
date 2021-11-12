@@ -1,3 +1,5 @@
+# 최저빈도수
+
 def find_not_repeating_first_character(string):
     alphabet_occurrence_array = [0] * 26
 

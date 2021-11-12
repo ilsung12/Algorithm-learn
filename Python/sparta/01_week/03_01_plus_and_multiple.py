@@ -1,3 +1,5 @@
+# 더하기 || 곱하기
+
 def find_max_plus_or_multiply(array):
 
     num = 0

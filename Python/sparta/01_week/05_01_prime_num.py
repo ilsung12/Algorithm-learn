@@ -1,3 +1,5 @@
+# 소수판별
+
 input = 20
 
 def find_prime_list_under_number(number):

@@ -1,3 +1,5 @@
+# 최빈값 찾기
+
 def find_max_occurred_alphabet(string):
     alphabet_occurrence_array = [0] * 26
 

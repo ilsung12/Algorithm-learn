@@ -4,3 +4,4 @@
 # Hello World
 # (대소문자에 주의한다.)
 
+print('Hello', 'World')

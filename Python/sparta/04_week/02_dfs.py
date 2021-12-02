@@ -13,14 +13,22 @@ graph = {
 }
 visited = []
 
+# 1. 시작 노드인 1부터 탐색합니다!
+# 2. 현재 방문한 노드를 visited_array 에 추가합니다!
+# 3. 현재 방문한 노드와 인접한 노드 중 방문하지 않은 노드에 방문합니다!
+
+# 현재 방문한 노드와 인접한 노드는 adjacent_graph[cur_node] 로 구할 수 있습니다!
+# 방문하지 않은 걸 확인 하기 위해서는 visited_array 를 이용하시면 됩니다!
 
 def dfs_recursion(adjacent_graph, cur_node, visited_array):
     visited_array.append(cur_node)
+
     for adjacent_node in adjacent_graph[cur_node]:
         if adjacent_node not in visited_array:
             dfs_recursion(adjacent_graph, adjacent_node, visited_array)
     return
 
+# 재귀함수를 통해서는 무한정 깊어지는 노드가 있는 경우 에러가 생길 수 있습니다!
 
 dfs_recursion(graph, 1, visited)  # 1 이 시작노드입니다!
 print(visited)  # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 이 출력되어야 합니다!

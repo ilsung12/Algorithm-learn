@@ -4,24 +4,24 @@ class MaxHeap:
 
     def insert(self, value):
         self.items.append(value)
-        cur_index = len(self.items) - 1
+        cur_index = len(self.items) - 1 # 맨끝의 인덱스 값
 
         while cur_index > 1:  # cur_index 가 1이 되면 정상을 찍은거라 다른 것과 비교 안하셔도 됩니다!
             parent_index = cur_index // 2
-            if self.items[parent_index] < self.items[cur_index]:
-                self.items[parent_index], self.items[cur_index] = self.items[cur_index], self.items[parent_index]
-                cur_index = parent_index
+            if self.items[parent_index] < self.items[cur_index]: # 부모인덱스 보다 현재인덱스가 크다면,
+                self.items[parent_index], self.items[cur_index] = self.items[cur_index], self.items[parent_index] # 교체 : a,b = b,a
+                cur_index = parent_index # 부모의 인덱스를 현재인덱스에 줌 ( 다음 반복문을 위함 )
             else:
                 break
 
-    def delete(self):
-        self.items[1], self.items[-1] = self.items[-1], self.items[1]
-        prev_max = self.items.pop()
+    def delete(self):   # 항상 맨 위 의 루트노드가 제거됩니다.
+        self.items[1], self.items[-1] = self.items[-1], self.items[1] # 루트 노드와 맨 끝의 노드를 교체한다
+        prev_max = self.items.pop() # 맨 끝 의 노드를 제거
         cur_index = 1
 
         while cur_index <= len(self.items) - 1:
-            left_child_index = cur_index * 2
-            right_child_index = cur_index * 2 + 1
+            left_child_index = cur_index * 2 # 왼쪽 자식의 인덱스
+            right_child_index = cur_index * 2 + 1 # 오른쪽 자식의 인덱스
             max_index = cur_index
 
             if left_child_index <= len(self.items) - 1 and self.items[left_child_index] > self.items[max_index]:
@@ -33,8 +33,8 @@ class MaxHeap:
             if max_index == cur_index:
                 break
 
-            self.items[cur_index], self.items[max_index] = self.items[max_index], self.items[cur_index]
-            cur_index = max_index
+            self.items[cur_index], self.items[max_index] = self.items[max_index], self.items[cur_index] # value 를 변경
+            cur_index = max_index # 인덱스를 줌
 
         return prev_max
 

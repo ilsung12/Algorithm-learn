@@ -5,10 +5,11 @@ def selection_sort(array):
     n = len(array)
     for i in range(n - 1):
         min_index = i
+        
         for j in range(n - i): # 01234, 1234, 234, 34 순으로 검사 (ft.i + j)
             if array[i + j] < array[min_index]:
                 min_index = i + j
-
+        print('IJ',i + j, 'i',i, 'j',j,'MIN', min_index, 'arr', array,'array[i + j]',array[i + j], 'array[min_index]',array[min_index] ,'array[i]',array[i])
         array[i], array[min_index] = array[min_index], array[i]
 
     return array

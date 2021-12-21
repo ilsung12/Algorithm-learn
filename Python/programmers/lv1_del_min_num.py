@@ -17,11 +17,5 @@ def solution(arr):
             r.append(n[i])
 
     return r
-    
-
-        
-
-    
-
 
 print(solution([4,3,2,1]))

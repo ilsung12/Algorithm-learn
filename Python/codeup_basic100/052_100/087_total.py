@@ -15,6 +15,6 @@ for i in range(n):
     if sum % 3 != 0:
         print(sum, end=' ')    
         
-    if n <= sum:
+    if n <= sum: # break point
         break
     

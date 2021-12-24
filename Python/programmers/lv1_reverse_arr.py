@@ -7,10 +7,9 @@ def solution(n):
     s = []
 
     for i in range(1, len(arr) + 1):
-        s.append(int(arr[-i]))
+        s.append(int(arr[-i])) # 끝에 인덱스 부터 넣기
              
     return s
-
 
 print(solution(12345))
 

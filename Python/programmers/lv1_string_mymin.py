@@ -7,11 +7,14 @@ def solution(strings, n):
     arr = []
     
     for i in range(len(strings)):
-        arr.append(strings[i][n])
-        print(arr)
-        
+        strings[i] = strings[i][n] + strings[i]
+    strings.sort()
+    print(strings)
 
+    for j in range(len(strings)):
+        arr.append(strings[j][1:]) 
 
-    return 
+    return arr
+
 
 print(solution(["sun", "bed", "car"], 1))

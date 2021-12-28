@@ -9,7 +9,7 @@ def solution(x, n):
         s += x
         answer.append(s)         
 
-    return print(answer)
+    return answer
 
 solution(2,5)
 solution(4,3)

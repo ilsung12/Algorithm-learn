@@ -27,41 +27,37 @@
 # 0~10의 정수와 문자 S, D, T, *, #로 구성된 문자열이 입력될 시 총점수를 반환하는 함수를 작성하라.
 
 def solution(dartResult):
-    dartResult = list(dartResult)
-    
-    ans = 0
+    n = ''
     result= []
-    for i in range(1, len(dartResult)):
-        # print('-1', dartResult[i-1])
-        # print('1', dartResult[i])
-
-        if dartResult[i] == "S":
-            result.append(int(dartResult[i-1]) * 1)
-            
-        elif dartResult[i] == "D":
-            result.append(int(dartResult[i-1]) * int(dartResult[i-1]))
-            
-        elif dartResult[i] == "T":
-            result.append(int(dartResult[i-1]) * int(dartResult[i-1]) * int(dartResult[i-1]))
-        
-        
-        if dartResult[i] == "*"  : 
-            if i < 3:
-                result[int(i/3-1)] = result[int(i/3-1)] * 2
+    for i in dartResult:
+        # 숫자 다음엔 항상 문자가 나오는 것을 활용 !
+        if i.isnumeric(): # 숫자면 n 에 담아라
+            n += i
+        elif i == "S": # i 가 S 면, 
+            n = int(n)**1 # 숫자였을때 담아둔 num을 1승 함
+            result.append(n) # 1승한 num 을 배열에 넣음
+            n = '' # 다음 숫자를 위해 초기화
+        elif i == "D":
+            n = int(n)**2
+            result.append(n)
+            n = ''
+        elif i == "T":
+            n = int(n)**3
+            result.append(n)
+            n = ''
+        elif i == "*"  : 
+            # 추출해낸 값을 가진 배열의 index를 활용
+            if len(result) > 1:
+                result[-1] = result[-1] * 2
+                result[-2] = result[-2] * 2
             else:
-                result[int(i/3)] = result[int(i/3)] * 2
-                result[int(i/3-1)] = result[int(i/3-1)] * 2
-         
-             
-        elif dartResult[i] == "#":
-            result[int(i/3)] = (int(result[int(i/3)]) * -1)
+                result[-1] = result[-1] * 2
+            
+        elif i == "#":
+            result[-1] = result[-1] * -1
         
-        
-    for j in range(len(result)):
-        ans += result[j]
-
-
-    return ans
+        print(result)
+    return sum(result)
 
 
 print(solution('1D2S#10S'))

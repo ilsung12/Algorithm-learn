@@ -27,24 +27,24 @@
 # 0~10의 정수와 문자 S, D, T, *, #로 구성된 문자열이 입력될 시 총점수를 반환하는 함수를 작성하라.
 
 def solution(dartResult):
-    n = ''
+    num = ''
     result= []
     for i in dartResult:
         # 숫자 다음엔 항상 문자가 나오는 것을 활용 !
-        if i.isnumeric(): # 숫자면 n 에 담아라
-            n += i
+        if i.isnumeric(): # 숫자면 num 에 담아라
+            num += i
         elif i == "S": # i 가 S 면, 
-            n = int(n)**1 # 숫자였을때 담아둔 num을 1승 함
-            result.append(n) # 1승한 num 을 배열에 넣음
-            n = '' # 다음 숫자를 위해 초기화
+            num = int(num)**1 # 숫자였을때 담아둔 num을 1승 함
+            result.append(num) # 1승한 num 을 배열에 넣음
+            num = '' # 다음 숫자를 위해 초기화
         elif i == "D":
-            n = int(n)**2
-            result.append(n)
-            n = ''
+            num = int(num)**2
+            result.append(num)
+            num = ''
         elif i == "T":
-            n = int(n)**3
-            result.append(n)
-            n = ''
+            num = int(num)**3
+            result.append(num)
+            num = ''
         elif i == "*"  : 
             # 추출해낸 값을 가진 배열의 index를 활용
             if len(result) > 1:

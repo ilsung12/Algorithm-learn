@@ -12,13 +12,41 @@
 # 중복된 숫자가 들어있지 않습니다.
 
 from itertools import combinations
+import math
 
-def prime_number(x):
-    answer = 0
-    for i in range(1,int(x**0.5)+1):
-        if x%i==0:
-            answer+=1
-    return 1 if answer==1 else 0
+# 소수 판별
+def isprime(n):
+	# 소수 판별할 숫자의 제곱근을 구한다.
+    sqrt = math.sqrt(n)
+
+	# 제곱근이 2보다 작으면 소수가 아니다.
+    if sqrt < 2:
+        return False
+
+	# 2부터 제곱근까지 나눴을때 나머지가 0이 나오면 소수가 아니다.
+    for i in range(2, int(sqrt+1)):
+        if n % i == 0:
+            return False
+    
+    return  True
 
 def solution(nums):
-    return sum([prime_number(sum(c)) for c in combinations(nums,3)])
+    answer = 0
+    # 중복을 제거한 3개로 된 숫자의 배열을 만듬
+    arr = list(combinations(nums, 3))
+	
+    print('arr = > ',arr)
+    # 3개의 배열을 소수판별 시킴 -> 세개의 합이 True 면
+    for n1, n2, n3 in arr:
+        print('n1 = > ', n1)
+        print('n2 = > ', n2)
+        print('n3 = > ', n3)
+        print('----------')
+        if isprime(n1+n2+n3):
+            # answer를 + 1
+            answer += 1
+
+    return answer
+
+
+print(solution([1,2,4,5]))
